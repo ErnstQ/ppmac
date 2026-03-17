@@ -23,7 +23,7 @@ card_types = [
 def trim(s):
     if ',' in s:
         s = s.split(',')[0]
-    return re.sub('[$XxYy:,]', '', s)
+    return re.sub(r'[$XxYy:,]', '', s)
 
 def conv_on_board_io(addr):
     return sum([0x000000,

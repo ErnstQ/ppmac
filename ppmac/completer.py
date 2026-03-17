@@ -21,18 +21,18 @@ MODULE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
 def get_index(name):
-    m = re.search('\[(\d+)\]', name)
+    m = re.search(r'\[(\d+)\]', name)
     if m:
         return int(m.groups()[0])
     return None
 
 
 def remove_indices_and_brackets(name):
-    return re.sub('(\[\d+\]?)', '', name)
+    return re.sub(r'(\[\d+\]?)', '', name)
 
 
 def remove_indices(name):
-    return re.sub('(\[\d+\])', '[]', name)
+    return re.sub(r'(\[\d+\])', '[]', name)
 
 
 def fix_name(name):

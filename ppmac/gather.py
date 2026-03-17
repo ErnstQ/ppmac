@@ -70,13 +70,13 @@ def get_settings(servo_period, addresses=[], gather_period=1, duration=2.0,
 
 def read_settings_file(comm, fn=None):
     def get_index(name):
-        m = re.search('\[(\d+)\]', name)
+        m = re.search(r'\[(\d+)\]', name)
         if m:
             return int(m.groups()[0])
         return None
 
     def remove_indices_and_brackets(name):
-        return re.sub('(\[\d+\]?)', '', name)
+        return re.sub(r'(\[\d+\]?)', '', name)
 
     if fn is None:
         fn = gather_config_file
